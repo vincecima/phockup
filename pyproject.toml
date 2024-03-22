@@ -1,0 +1,30 @@
+[project]
+name = "phockup"
+version = "1.13.0"
+description = "Media sorting tool to organize photos and videos from your camera in folders by year, month and day."
+dependencies = ["tqdm==4.66.1"]
+readme = "README.md"
+requires-python = ">= 3.8"
+
+[project.scripts]
+phockup = "phockup:phockup"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.rye]
+managed = true
+dev-dependencies = [
+    "pytest",
+    "pytest-mock",
+    "pytest-cov",
+    "pytest-socket",
+    "pre-commit",
+]
+
+[tool.hatch.metadata]
+allow-direct-references = true
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/phockup"]
